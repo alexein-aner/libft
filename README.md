@@ -1,2 +1,0 @@
-# c-cursus
-# c-cursus
