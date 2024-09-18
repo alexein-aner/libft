@@ -1,0 +1,23 @@
+• isalpha y
+• isdigit y
+• isalnum y
+• isascii y
+• isprint y
+• strlen y
+• memset y
+• bzero y
+• memcpy 
+• memmove 
+• strlcpy y
+• strlcat y
+• toupper y
+• tolower y
+• strchr 
+• strrchr 
+• strncmp y
+• memchr 
+• memcmp 
+• strnstr y
+• atoi y
+• calloc 
+• strdup y
