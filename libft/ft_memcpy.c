@@ -6,40 +6,22 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:16:39 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/17 12:43:01 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/19 17:57:02 by knieve-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memcpy(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-	char	*pd;
-	char	*ps;
-
-	pd = (char *)dest;
-	ps = (char *)src;
-	i = 0;
-	while (i < n)
+	if (dst == src)
+		return (dst);
+	if (dst < src)
+		return (ft_memcpy(dst, src, len));
+	else
 	{
-		pd[i] = ps[i];
-		i++;
+		while (len--)
+			((unsigned char *)dst)[len] = ((const unsigned char *)src)[len];
 	}
-	return (dest);
+	return (dst);
 }
-/*
-int main()
-{
-	char *src = "Hola";
-	char dest[4];
-
-	memcpy(dest, src, 4);
-	int i = 0;
-	while(i < 4)
-	{
-		printf("%c", dest[i]);
-		i++;
-	}
-}
-*/

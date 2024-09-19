@@ -6,23 +6,13 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 15:19:36 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/08/24 15:36:23 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/19 19:30:08 by knieve-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
-{
-	int	len;
-
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
-}
-
-char	*ft_strcpy(char *dest, char *src)
+static char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 
@@ -36,7 +26,7 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-int	calculate_total_length(int size, char **strs, char *sep)
+static int	calculate_total_length(int size, char **strs, char *sep)
 {
 	int	total_len;
 	int	i;
@@ -53,7 +43,7 @@ int	calculate_total_length(int size, char **strs, char *sep)
 	return (total_len);
 }
 
-char	*copy_strings_with_sep(char *result, int size, char **strs, char *sep)
+static char	*cpy_str_sep(char *result, int size, char **strs, char *sep)
 {
 	int		i;
 	char	*ptr;
@@ -86,7 +76,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	result = malloc(total_len + 1);
 	if (result == NULL)
 		return (NULL);
-	ptr = copy_strings_with_sep(result, size, strs, sep);
+	ptr = cpy_str_sep(result, size, strs, sep);
 	*ptr = '\0';
 	return (result);
 }

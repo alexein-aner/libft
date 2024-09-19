@@ -6,7 +6,7 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 16:50:08 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/08/25 10:16:29 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/19 17:53:36 by knieve-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@ char	*ft_strdup(char *src)
 	int		length;
 	char	*copy;
 
-	length = 0;
+	length = ft_strlen(src);
 	i = 0;
-	while (src[length] != '\0')
-		length++;
 	copy = malloc(length + 1);
 	while (i <= length)
 	{
@@ -30,9 +28,3 @@ char	*ft_strdup(char *src)
 	}
 	return (copy);
 }
-/*
-int main()
-{
-	printf("%s", ft_strdup("Hola"));
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 12:36:50 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/08/20 19:12:47 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/19 18:02:17 by knieve-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,3 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	}
 	return (0);
 }
-/*
-int main()
-{
-        printf("%d\n", ft_strncmp("ABC", "ABC", 3));
-        printf("%d\n", ft_strncmp("ABC", "AB", 2));
-        printf("%d\n", ft_strncmp("ABA", "ABZ", 2));
-        printf("%d\n", ft_strncmp("ABJ", "ABC", 2));
-	printf("\n------------------------\n");
-        printf("%d\n", strncmp("ABC", "ABC", 3));
-        printf("%d\n", strncmp("ABC", "AB", 2));
-        printf("%d\n", strncmp("ABA", "ABZ", 2));
-        printf("%d\n", strncmp("ABJ", "ABC", 2));
-}
-*/
