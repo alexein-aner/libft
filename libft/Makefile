@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: yurolive <yurolive@student.42madrid.com    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/17 11:55:41 by yurolive          #+#    #+#              #
-#    Updated: 2024/09/18 12:56:04 by yurolive         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 # Las Flags para compilar
 FLAG = -Wall -Wextra -Werror
 # El nombre del "Programa"
@@ -38,17 +26,6 @@ SRC = ft_isalpha.c \
 		ft_memcmp.c \
 		ft_calloc.c \
 		ft_strdup.c \
-		ft_substr.c \
-		ft_strjoin.c \
-		ft_strtrim.c \
-		ft_putchar_fd.c \
-		ft_putstr_fd.c \
-		ft_putendl_fd.c \
-		ft_putnbr_fd.c \
-		ft_strmapi.c \
-		ft_split.c \
-		ft_itoa.c \
-		ft_striteri.c \
 	  
 # Los Archivos "librerias" .o
 OBJ = $(SRC:.c=.o)
@@ -62,6 +39,7 @@ BONUS = ft_lstnew_bonus.c \
 		ft_lstclear_bonus.c \
 		ft_lstiter_bonus.c \
 		ft_lstmap_bonus.c \
+
 # Los Archivos "librerias" .o de Bonus
 BONUS_OBJ = $(BONUS:.c=.o)
 # Se refiere a lo ejecutable

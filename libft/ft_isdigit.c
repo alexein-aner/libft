@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
+int	ft_isdigit(char *str)
 {
 	if (*str == '\0')
 		return (1);

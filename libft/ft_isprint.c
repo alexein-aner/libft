@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_printable(char *str)
+int	ft_isprint(char *str)
 {
 	if (*str == '\0')
 		return (1);

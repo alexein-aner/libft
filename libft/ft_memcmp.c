@@ -10,20 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void *memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t		i;
-	const char	*ptr;
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
 	i = 0;
-	ptr = (const char *)s;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
 	while (i < n)
 	{
-		if (ptr[i] == (char)c)
-			return ((void *)&ptr[i]);
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
+
