@@ -23,4 +23,3 @@ int	ft_atoi(char *str)
 	}
 	return (sign * result);
 }
-

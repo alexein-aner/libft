@@ -14,18 +14,18 @@
 
 char	*strchr(const char *s, int c)
 {
-	int  i;
+	int	i;
 
 	i = 0;
- 	while (s[i] != '\0')
+	while (s[i] != '\0')
 	{
-  		if (s[i] == c)
+		if (s[i] == c)
 			return ((char *)&s[i]);
 		i++;
 	}
 	return (NULL);
 }
-
+/*
 int main(void)
 {
 	char *str = "Hola";
@@ -33,3 +33,4 @@ int main(void)
 	printf("%p\n", strchr(str, 'o'));
 	return (0);
 }
+*/

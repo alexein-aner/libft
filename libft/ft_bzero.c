@@ -12,45 +12,30 @@
 
 #include "libft.h"
 
-void *memset(void *s, int c, size_t n)
+void	bzero(void *s, size_t n)
 {
-	size_t i;
-	char *ptr;
-	
+	size_t	i;
+	char	*ptr;
+
 	i = 0;
 	ptr = (char *)s;
-	while(i < n)
+	while (i < n)
 	{
-		ptr[i] = (char)c;
+		ptr[i] = '\0';
 		printf("%c", ptr[i]);
 		i++;
 	}
-	return (s);
 }
 
-void bzero(void *s, size_t n)
-{
- 	size_t i;
- 	char *ptr;
-
- 	i = 0;
- 	ptr = (char *)s;
- 	while (i < n)
- 	{
-  		ptr[i] = '\0';
-  		printf("%c", ptr[i]);
-  		i++;
- 	}
-}
-
+/*
 int main(void)
 {
  	char *arr;
 	int i = 0;
 
  	arr = malloc(4);
- 	memset(arr, 'a', 4);
-//	bzero(arr, 4);
+ 	ft_memset(arr, 'a', 4);
+	bzero(arr, 4);
 	printf("\nStarting check \n");
 	while(arr[i] != '\0')
 	{
@@ -61,3 +46,4 @@ int main(void)
 	free(arr);
  	return (0);
 }
+*/

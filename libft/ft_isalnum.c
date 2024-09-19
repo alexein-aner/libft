@@ -1,7 +1,8 @@
+#include "libft.h"
+
 int	ft_isalnum(char *str)
 {
-	if (!((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z') || (*str >= '0' && *str <= '9')))
+	if (ft_isalpha(str) || ft_isdigit(str))
 		return (0);
 	return (1);
 }
-

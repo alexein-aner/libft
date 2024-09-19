@@ -26,7 +26,7 @@ void	*calloc(size_t nmemb, size_t size)
 	}
 	return (arr);
 }
-
+/*
 int main()
 {	
 	char *arr = calloc(2, 4);
@@ -35,3 +35,4 @@ int main()
 	printf("%d", arr[0]);
 	printf("%d", arr[1]);
 }
+*/

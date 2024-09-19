@@ -15,11 +15,11 @@
 void	*memset(void *s, int c, size_t n)
 {
 	size_t	i;
-	int	*ptr;
-	
+	int		*ptr;
+
 	i = 0;
 	ptr = (int *)s;
-	while(i < n)
+	while (i < n)
 	{
 		ptr[i] = c;
 		printf("%d", ptr[i]);
@@ -28,6 +28,7 @@ void	*memset(void *s, int c, size_t n)
 	return (s);
 }
 
+/*
 int main(void)
 {
  	int *arr;
@@ -37,3 +38,4 @@ int main(void)
  	free(arr);
  	return (0);
 }
+*/
