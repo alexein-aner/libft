@@ -6,15 +6,13 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 15:42:58 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/19 19:25:55 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/20 11:13:17 by knieve-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char *str)
+int	ft_isprint(int c)
 {
-	if (*str == '\0')
+	if (c >= 32 && c <= 126)
 		return (1);
-	if (*str <= 32 || *str >= 126)
-		return (0);
-	return (1);
+	return (0);
 }

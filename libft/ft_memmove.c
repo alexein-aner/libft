@@ -6,7 +6,7 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 13:02:54 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/19 19:26:33 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/20 10:45:19 by knieve-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,28 @@
 
 void	*memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	char	*pt;
-	char	*ps;
-	char	*p;
+	size_t		i;
+	char		*pd;
+	const char	*ps;
 
-	*pd = (char *)dest;
-	*ps = (char *)src;
-	*pt = "";
+	pd = (char *)dest;
+	ps = (const char *)src;
 	i = 0;
-	while (i < n)
+	if (pd > ps)
 	{
-		pt[i] = ps[i];
-		i++;
+		while (n > 0)
+		{
+			n--;
+			pd[n] = ps[n];
+		}
 	}
-	i = 0;
-	while (i < n)
+	else
 	{
-		pd[i] = pt[i];
-		i++;
+		while (i < n)
+		{
+			pd[i] = ps[i];
+			i++;
+		}
 	}
 	return (dest);
 }
-/*
-int main()
-{
-	char *src = "Hola";
-	char dest[4];
-
-	memmove(dest, src, 4);
-	int i = 0;
-	while(i < 4)
-	{
-		printf("%c", dest[i]);
-		i++;
-	}
-}
-*/

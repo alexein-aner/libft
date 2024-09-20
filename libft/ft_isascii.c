@@ -6,13 +6,13 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:10:19 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/19 18:10:20 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/20 11:13:47 by knieve-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(char c)
+int ft_isascii(int c)
 {
-	if (c >= 0 && c <= 126)
-		return (1);
-	return (0);
+    if (c >= 0 && c <= 127)
+        return (1);
+    return (0);
 }

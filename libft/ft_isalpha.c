@@ -6,15 +6,13 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:10:10 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/19 18:10:11 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/20 11:11:25 by knieve-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char *str)
+int	ft_isalpha(int c)
 {
-	if (*str == '\0')
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
-	if (!(*str >= 'a' && *str <= 'z') && !(*str >= 'A' && *str <= 'Z'))
-		return (0);
-	return (1);
+	return (0);
 }

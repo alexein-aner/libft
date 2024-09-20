@@ -6,11 +6,11 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 15:19:36 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/19 19:30:08 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/20 11:23:34 by knieve-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h" 
 
 static char	*ft_strcpy(char *dest, char *src)
 {
