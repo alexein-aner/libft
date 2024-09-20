@@ -6,77 +6,32 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 15:19:36 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/20 11:23:34 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/20 12:19:27 by knieve-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" 
-
-static char	*ft_strcpy(char *dest, char *src)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	size_t		i;
+	size_t		j;
+	char		*str;
 
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-static int	calculate_total_length(int size, char **strs, char *sep)
-{
-	int	total_len;
-	int	i;
-
-	total_len = 0;
-	i = 0;
-	while (i < size)
-	{
-		total_len += ft_strlen(strs[i]);
-		if (i < size - 1)
-			total_len += ft_strlen(sep);
-		i++;
-	}
-	return (total_len);
-}
-
-static char	*cpy_str_sep(char *result, int size, char **strs, char *sep)
-{
-	int		i;
-	char	*ptr;
-
-	ptr = result;
-	i = 0;
-	while (i < size)
-	{
-		ptr = ft_strcpy(ptr, strs[i]);
-		ptr += ft_strlen(strs[i]);
-		if (i < size - 1)
-		{
-			ptr = ft_strcpy(ptr, sep);
-			ptr += ft_strlen(sep);
-		}
-		i++;
-	}
-	return (ptr);
-}
-
-char	*ft_strjoin(int size, char **strs, char *sep)
-{
-	int		total_len;
-	char	*result;
-	char	*ptr;
-
-	if (size == 0)
-		return ((char *)malloc(sizeof(char)));
-	total_len = calculate_total_length(size, strs, sep);
-	result = malloc(total_len + 1);
-	if (result == NULL)
+	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!str)
 		return (NULL);
-	ptr = cpy_str_sep(result, size, strs, sep);
-	*ptr = '\0';
-	return (result);
+	i = 0;
+	j = 0;
+	while (s1[i])
+	{
+		str[j++] = s1[i];
+		i++;
+	}
+	i = 0;
+	while (s2[i])
+	{
+		str[j++] = s2[i];
+		i++;
+	}
+	str[j] = 0;
+	return (str);
 }

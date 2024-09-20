@@ -6,31 +6,24 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 15:48:31 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/19 19:26:43 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/20 11:58:41 by knieve-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			return ((char *)&s[i]);
 		i++;
 	}
+	if (c == '\0')
+		return ((char *)&s[i]);
 	return (NULL);
 }
-/*
-int main(void)
-{
-	char *str = "Hola";
-
-	printf("%p\n", strchr(str, 'o'));
-	return (0);
-}
-*/
