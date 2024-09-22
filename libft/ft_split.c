@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kamil <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/22 12:55:16 by kamil             #+#    #+#             */
-/*   Updated: 2024/09/22 14:16:34 by kamil            ###   ########.fr       */
+/*   Created: 2024/09/22 15:00:19 by kamil             #+#    #+#             */
+/*   Updated: 2024/09/22 16:20:56 by kamil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,101 +16,87 @@ int	ft_count_words(char const *s, char c)
 {
 	int	i;
 	int	is_new;
-	int	word_count;
+	int	count;
 
 	i = 0;
 	is_new = 1;
-	word_count = 0;
-
+	count = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] != c && is_new)
 		{
-			word_count++;
+			count++;
 			is_new = 0;
 		}
-		else if (s[i] == c)
-		{
+		else
 			is_new = 1;
-		}
 		i++;
 	}
-	return (word_count);
-}
-
-int	ft_word_length(char const *s, char sep, int index)
-{
-	int	length;
-
-	length = 0;
-
-	while (s[index] != '\0' && s[index] != sep)
-	{
-		length++;
-		index++;
-	}
-	return (length);
+	return (count);
 }
 
 char	**ft_create_arr(int word_count)
 {
 	char	**arr;
 
-	arr = ft_calloc(word_count + 1, sizeof(char *));
+	arr = ft_calloc((word_count + 1) * sizeof(char *));
 	if (!arr)
-	{
 		return (NULL);
-	}
 	return (arr);
 }
 
-char	**ft_fill_arr(char const *s, char sep, char **array)
+char	*ft_alloc_word(char const *s, char sep, int *index)
+{
+	char	*word;
+	int		word_len;
+
+	word_len = ft_word_len(s, sep, *index);
+	word = ft_calloc((word_len + 1) * sizeof(char));
+	if (!word)
+		return (NULL);
+	ft_strlcpy(word, &s[*index], word_len + 1);
+	*index += word_len;
+	return (word);
+}
+
+char	**ft_fill_arr(char const *s, char sep, char **arr)
 {
 	int	i;
-	int	arr_idx;
-	int	word_len;
+	int	idx;
 
 	i = 0;
-	arr_idx = 0;
-
+	idx = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] != sep)
 		{
-			word_len = ft_word_length(s, sep, i);
-			array[arr_idx] = ft_calloc(word_len + 1, sizeof(char));
-			if (!array[arr_idx])
+			arr[idx] = ft_alloc_word(s, sep, &i);
+			if (!arr[idx])
 			{
-				while (arr_idx > 0)
-				{
-					free(array[--arr_idx]);
-				}
-				free(array);
+				while (idx > 0)
+					free(arr[--idx]);
+				free(arr);
 				return (NULL);
 			}
-			ft_strlcpy(array[arr_idx], &s[i], word_len + 1);
-			i += word_len;
-			arr_idx++;
+			idx++;
 		}
 		else
-		{
 			i++;
-		}
 	}
-	return (array);
+	return (arr);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int 	word_count;
-	char 		**array;
+	int		word_count;
+	char	**res_arr;
 
 	word_count = ft_count_words(s, c);
-	array = ft_create_arr(word_count);
-	if (!array)
-	{
+	res_arr = ft_create_arr(word_count);
+	if (!res_arr)
 		return (NULL);
-	}
-	ft_fill_arr(s, c, array);
-	return (array);
+	ft_fill_arr(s, c, res_arr);
+	if (!res_arr)
+		return (NULL);
+	return (res_arr);
 }
