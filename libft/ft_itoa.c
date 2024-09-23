@@ -6,11 +6,11 @@
 /*   By: kamil <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 20:43:09 by kamil             #+#    #+#             */
-/*   Updated: 2024/09/21 20:51:14 by kamil            ###   ########.fr       */
+/*   Updated: 2024/09/23 20:58:55 by kamil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static size_t	ft_count_digits(long nbr)
 {

@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: kamil <marvin@42.fr>                       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/09/23 21:09:39 by kamil             #+#    #+#              #
+#    Updated: 2024/09/23 21:09:41 by kamil            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 # Las Flags para compilar
 FLAG = -Wall -Wextra -Werror
 # El nombre del "Programa"
@@ -53,7 +65,7 @@ BONUS = ft_lstnew_bonus.c \
 # Los Archivos "librerias" .o de Bonus
 BONUS_OBJ = $(BONUS:.c=.o)
 # Se refiere a lo ejecutable
-all: ${NAME}
+all: $(NAME)
 # Creo el "Programa" a partir de los archivos .o
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
