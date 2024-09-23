@@ -6,7 +6,7 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 11:58:16 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/23 12:02:24 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/23 20:14:46 by kamil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	i;
-	t_list	*ptr; 
+	int		i;
+	t_list	*ptr;
 
 	i = 0;
 	ptr = lst;
-	while(ptr != NULL)
+	while (ptr != NULL)
 	{
 		ptr = ptr->next;
 		i++;

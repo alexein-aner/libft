@@ -6,7 +6,7 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 10:21:58 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/20 11:54:28 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/23 20:17:36 by kamil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t          i;
-	unsigned char   *ptr;
+	size_t			i;
+	unsigned char	*ptr;
 
-	ptr = (unsigned char *)s;  // Use unsigned char for byte-wise manipulation
+	ptr = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{
-		ptr[i] = (unsigned char)c;  // Ensure c is treated as a byte
+		ptr[i] = (unsigned char)c;
 		i++;
 	}
 	return (s);

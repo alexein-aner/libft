@@ -6,7 +6,7 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:08:58 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/23 12:12:08 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/23 20:10:28 by kamil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	if (*lst == NULL)
 	{
 		*lst = new;
-		return;
+		return ;
 	}
 	ptr = *lst;
 	while (ptr->next != NULL)

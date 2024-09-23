@@ -6,7 +6,7 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 11:51:14 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/23 11:58:03 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/23 20:19:27 by kamil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
-		return;
+		return ;
 	new->next = *lst;
 	*lst = new;
 }

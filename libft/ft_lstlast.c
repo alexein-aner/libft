@@ -6,18 +6,18 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:03:07 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/23 12:08:11 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/23 20:11:43 by kamil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*ptr; 
+	t_list	*ptr;
 
 	ptr = lst;
-	while(ptr->next != NULL)
+	while (ptr->next != NULL)
 		ptr = ptr->next;
 	return (ptr);
 }

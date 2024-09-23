@@ -6,11 +6,26 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 10:50:58 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/23 10:55:02 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/23 19:45:32 by kamil            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	
+	char			*str;
+	unsigned int	i;
+
+	if (!s || !f)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
