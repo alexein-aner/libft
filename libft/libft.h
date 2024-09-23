@@ -6,7 +6,7 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 19:27:06 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/20 11:01:16 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/23 11:08:12 by knieve-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
+
+typedef struct	s_list
+{
+	void	*content;
+	struct	s_list *next;
+}		t_list;
 
 unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size);
 unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size);
