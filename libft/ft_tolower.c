@@ -6,16 +6,13 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 15:44:19 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/19 19:25:33 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/24 10:25:28 by knieve-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlowcase(char *str)
+int	ft_tolower(int c)
 {
-	int	index;
-
-	index = 0;
-	if (str[index] >= 'A' && str[index] <= 'Z')
-		str[index] = str[index] + ('a' - 'A');
-	return (str);
+	if (c >= 'A' && c <= 'Z')
+		c = c + ('a' - 'A');
+	return (c);
 }
