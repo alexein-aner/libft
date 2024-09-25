@@ -6,7 +6,7 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:44:45 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/24 17:59:27 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/25 12:36:32 by knieve-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,18 @@ static void	ft_free(char **split)
 {
 	int	i;
 
-	i = -1;
-	while (split[++i])
+	if (!split)
+		return ;
+	i = 0;
+	while (split[i])
 	{
 		free(split[i]);
+		i++;
 	}
 	free(split);
 }
 
-int	ft_count_words(const char *str, char c)
+static int	ft_count_words(const char *str, char c)
 {
 	int	i;
 	int	count;
@@ -37,7 +40,7 @@ int	ft_count_words(const char *str, char c)
 	{
 		if (str[i] == c)
 			in_word = 0;
-		if (str[i] != c && !in_word)
+		else if (!in_word)
 		{
 			in_word = 1;
 			count++;
@@ -47,29 +50,30 @@ int	ft_count_words(const char *str, char c)
 	return (count);
 }
 
-char	**ft_fill_split(const char *str, char c, char **split)
+static char	**populate_split(char const *s, char c, char **split)
 {
-	int	i;
-	int	j;
-	int	start;
+	size_t	start;
+	size_t	i;
+	size_t	j;
 
+	start = 0;
 	i = 0;
 	j = 0;
-	start = -1;
-	while (str[i++])
+	while (s[i])
 	{
-		if (str[i] != c && start == -1)
-			start = i;
-		if ((str[i] == c || str[i + 1] == '\0') && start != -1)
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 		{
-			split[j++] = ft_substr(str, start, i - start + (str[i + 1] == 0));
+			split[j] = ft_substr(s, start, i - start + 1);
 			if (!split[j])
 			{
 				ft_free(split);
 				return (NULL);
 			}
-			start = -1;
+			j++;
 		}
+		if (s[i] == c && s[i + 1] != c)
+			start = i + 1;
+		i++;
 	}
 	split[j] = NULL;
 	return (split);
@@ -78,18 +82,12 @@ char	**ft_fill_split(const char *str, char c, char **split)
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	int		word_count;
 
 	if (!s)
-	{
 		return (NULL);
-	}
-	word_count = ft_count_words(s, c);
-	split = malloc(sizeof(char *) * (word_count + 1));
+	split = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
 	if (!split)
 		return (NULL);
-	ft_fill_split(s, c, split);
-	if (!split)
-		return (NULL);
+	split = populate_split(s, c, split);
 	return (split);
 }
