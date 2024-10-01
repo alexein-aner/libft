@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 11:58:16 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/25 15:31:06 by knieve-l         ###   ########.fr       */
+/*   Created: 2024/09/28 11:13:49 by knieve-l          #+#    #+#             */
+/*   Updated: 2024/09/30 17:56:30 by knieve-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <fcntl.h>
 
-int	ft_lstsize(t_list *lst)
+char    *get_next_line(int  fd)
 {
-	int		i;
-
-	i = 0;
-	while (lst)
-	{
-		lst = lst->next;
-		i++;
-	}
-	return (i);
+    // Add needed error checks
+    // read fd in buf-sized chunks, until \n or \0 is found, 
+    // if theres one before end of the chunk, store leftover 
+    // in left_c, and fill the line buf with the ch before that,
+    // if there already were leftover chars, append the new results 
+    // at the end
 }

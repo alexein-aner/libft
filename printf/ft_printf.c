@@ -6,7 +6,7 @@
 /*   By: knieve-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 15:49:03 by knieve-l          #+#    #+#             */
-/*   Updated: 2024/09/27 11:57:40 by knieve-l         ###   ########.fr       */
+/*   Updated: 2024/09/30 16:34:11 by knieve-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ static int	handle_format(const char format, va_list args)
 		len += ft_puthex(va_arg(args, unsigned int), 1);
 	else if (format == '%')
 		len += ft_putchar('%');
+	else
+	{
+		len += ft_putchar('%');
+		len += ft_putchar(format);
+	}
 	return (len);
 }
 
@@ -52,7 +57,10 @@ int	ft_printf(char const *str, ...)
 		else
 		{
 			i++;
-			len += handle_format(str[i], args);
+			if (str[i] != '\0')
+				len += handle_format(str[i], args);
+			else
+				len += ft_putchar('%');
 		}
 		i++;
 	}
